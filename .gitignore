@@ -18,3 +18,10 @@ tickets.db
 
 # OS
 .DS_Store
+
+# Draw.io temporary files
+*.dtmp
+.~*
+
+# Draw.io
+*.drawio.bkp
