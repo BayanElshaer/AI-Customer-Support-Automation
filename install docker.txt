@@ -1,0 +1,84 @@
+Step 2: Restart Your Computer
+
+After installation, Windows may ask for a reboot.
+
+If not, I still recommend restarting.
+
+Step 3: Verify WSL
+
+After reboot, open a new PowerShell and run:
+
+wsl --status
+
+Expected result similar to:
+
+Default Version: 2
+
+and something like:
+
+Kernel version: ...
+Step 4: Check Installed Distributions
+
+Run:
+
+wsl -l -v
+
+Expected:
+
+NAME      STATE      VERSION
+Ubuntu    Stopped    2
+
+The important part is:
+
+VERSION = 2
+Step 5: Install Docker Desktop
+
+Once WSL is working, download:
+
+Docker Desktop for Windows
+
+Install with default settings.
+
+Make sure this option remains enabled:
+
+Use WSL 2 instead of Hyper-V
+Step 6: Verify Docker
+
+After Docker starts successfully:
+
+docker --version
+docker compose version
+docker run hello-world
+Why We're Doing This
+
+For your AI Customer Support project, Docker will eventually run:
+
+FastAPI
+n8n
+PostgreSQL
+
+using containers.
+
+Instead of installing everything manually, you'll be able to start the entire project with:
+
+docker compose up
+
+which is exactly how many real-world teams work.
+
+Your Next Task
+
+Run:
+
+wsl --install
+
+Reboot if prompted.
+
+Then send me the outputs of:
+
+wsl --status
+
+and
+
+wsl -l -v
+
+Before installing Docker Desktop, I'll verify WSL is configured correctly so you don't run into Docker issues later.

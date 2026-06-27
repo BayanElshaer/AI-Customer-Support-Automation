@@ -1,0 +1,49 @@
+ Invoke-RestMethod `
+>>  -Uri "http://localhost:5678/webhook-test/ticket" `
+>> -Method POST `
+>> -ContentType "application/json" `
+>> -Body '{"message":"I want a refund for my order"}'
+
+# Refund
+Invoke-RestMethod `
+-Uri "http://localhost:5678/webhook-test/ticket" `
+-Method POST `
+-ContentType "application/json" `
+-Body '{"message":"I want to return my order and get a refund"}'
+
+
+# Shipping
+Invoke-RestMethod `
+-Uri "http://localhost:5678/webhook-test/ticket" `
+-Method POST `
+-ContentType "application/json" `
+-Body '{"message":"Where is my package? It should have arrived yesterday."}'
+
+
+# Technical issue
+Invoke-RestMethod `
+-Uri "http://localhost:5678/webhook-test/ticket" `
+-Method POST `
+-ContentType "application/json" `
+-Body '{"message":"The website crashes when I try to log in."}'
+
+
+# Unknown category
+Invoke-RestMethod `
+-Uri "http://localhost:5678/webhook-test/ticket" `
+-Method POST `
+-ContentType "application/json" `
+-Body '{"message":"I have a very unusual request."}'
+
+
+
+postgres:
+    image: postgres:17
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres_password_here
+      - POSTGRES_DB=my_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
