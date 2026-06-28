@@ -98,7 +98,7 @@ AI_customer_support_automation/
 │   └── classifier.py
 │
 ├── Dockerfile
-├── docker-compose.yaml
+├── docker-compose.yml
 ├── requirements.txt
 ├── .env.example
 └── README.md
@@ -173,7 +173,7 @@ DELETE /tickets/{id}
 ## Clone the Repository
 
 ```bash
-git clone https://github.com/BayaElshaer/AI_customer_support_automation.git
+git clone https://github.com/BayanElshaer/AI-Customer-Support-Automation.git
 
 cd AI_customer_support_automation
 ```
